@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document with Smooth Sidebar</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    .sidebar {
+        background-color: #333;
+        color: white;
+        width: 250px;
+        height: 100vh; /* 100% of viewport height */
+        position: fixed; /* Fixed position */
+        top: 0;
+        left: -250px; /* Initially hidden */
+        transition: left 0.3s ease; /* Smooth slide transition */
+    }
+    .content {
+        flex: 1; /* Take remaining space */
+        padding: 20px;
+    }
+    .menu-toggle {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        z-index: 2;
+    }
+    .menu-toggle:hover {
+        opacity: 0.7;
+    }
+    .show-sidebar .sidebar {
+        left: 0; /* Show sidebar when .show-sidebar is applied */
+    }
+</style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <li><a href="docs.novacore.app/docu?=HTUHE.html">How To Use Hydro Engine</a></li>
+            <li><a href="#">How To Navigate The Alterra Ui</a></li>
+            <li><a href="#">Alterra</a></li>
+            <li><a href="#">Alterra</a></li>
+        </ul>
+    </div>
 
+    <!-- Content -->
+    <div class="content">
+        <h1>Main Content</h1>
+        <p>This is a simple HTML document with a smooth sidebar.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero eget enim faucibus, in aliquam metus pellentesque.</p>
+        <p>Fusce vitae laoreet risus. Morbi luctus urna sed enim gravida, et interdum nisi pharetra.</p>
+        <p>Curabitur a neque tincidunt, egestas sapien vitae, luctus velit. Fusce malesuada mauris vel erat dictum faucibus.</p>
+        <p>Donec ac vehicula dolor. Phasellus tempor nunc eu neque sodales varius.</p>
+    </div>
+
+    <!-- Menu toggle button -->
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+
+    <script>
+        function toggleSidebar() {
+            document.body.classList.toggle('show-sidebar');
+        }
+    </script>
+</body>
+</html>
